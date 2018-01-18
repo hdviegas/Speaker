@@ -1,0 +1,80 @@
+-- phpMyAdmin SQL Dump
+-- version 2.11.11
+-- http://www.phpmyadmin.net
+--
+-- Servidor: localhost
+-- Tempo de Geração: Dez 14, 2010 as 06:41 PM
+-- Versão do Servidor: 5.0.91
+-- Versão do PHP: 5.2.14
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- Banco de Dados: `speaker`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `mensagem`
+--
+
+CREATE TABLE IF NOT EXISTS `mensagem` (
+  `id` int(11) NOT NULL auto_increment,
+  `publico` int(11) NOT NULL,
+  `nome` varchar(200) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `texto` varchar(250) NOT NULL,
+  `data` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
+
+--
+-- Extraindo dados da tabela `mensagem`
+--
+
+INSERT INTO `mensagem` (`id`, `publico`, `nome`, `email`, `texto`, `data`) VALUES
+(3, 1, 'Ralph Waldo Emerson', 'ralph@waldo.com', 'Nada é mais simples do que a nobreza; na verdade, ser simples e ser nobre.', '2010-12-13 13:57:38'),
+(4, 1, 'Friedrich Nietzsche', 'nietzsche@filosofo.com', 'Fiquei magoado, não por me teres mentido, mas por não poder voltar a acreditar-te.', '2010-12-13 14:13:24'),
+(7, 1, 'Dalai Lama', 'dalai@lama.com', 'Se seu problema tiver solução, você não precisa se preocupar com ele. Se seu problema não tiver solução você não precisa se preocupar com ele também.', '2010-12-13 14:18:45'),
+(6, 1, 'José Dias Goulart', 'jose@dias.goulart.com', 'Paciência não é preguiça nem indolência, é a tranquilidade de que sabe esperar o momento oportuno, mas sem deixar de ser ativo!', '2010-12-13 14:17:31'),
+(8, 1, 'William Shakespeare', 'william@shakespeare', 'Nossas dádivas são traidoras e nos fazem perder o bem que poderíamos conquistar. Se não fosse o medo de tentar.', '2010-12-13 14:20:14'),
+(9, 0, 'Leon Tolstói', 'leon@filosofo.com', 'Não alcançamos a liberdade buscando a liberdade, mas sim a verdade. A liberdade não é um fim, mas uma consequência.', '2010-12-13 14:23:16'),
+(10, 0, 'Mahatma Gandhi', 'mahatma@gandhi.com', 'Não há escola que se iguale a um lar decente, nem professores que se igualem a pais honestos e virtuosos.', '2010-12-13 14:46:40'),
+(11, 0, 'William Shakespeare', 'william@shakespeare.com', 'Chorar sobre as desgraças passadas é a maneira mais segura de atrair outras.', '2010-12-13 15:12:00'),
+(12, 0, 'Nicolau Maquiavel', 'nicolau@Maquiavel.com', 'Tornamo-nos odiados tanto fazendo o bem como fazendo o mal.', '2010-12-13 15:54:46'),
+(14, 0, 'Benjamin Franklin', 'benjamin@franklin.com', 'O orgulho que se alimenta da vaidade termina em desprezo.', '2010-12-13 15:26:07'),
+(15, 0, 'Goethe', 'goethe@filosofo.com', 'Só sabemos com exatidão quando sabemos pouco. À medida que vamos adquirindo conhecimentos, instala-se a dúvida', '2010-12-13 15:28:40'),
+(16, 0, 'Aristóteles', 'aristoteles@filosofo.com', 'A coragem é a primeira das qualidades humanas porque garante todas as outras.', '2010-12-13 15:30:52'),
+(17, 0, 'Goethe', 'goethe@filosofo.com', 'O homem de bom senso jamais comete uma loucura de pouca importância.', '2010-12-13 15:42:46'),
+(18, 0, 'Bob Marley', 'bob@marley.com', 'Vocês riem de mim por eu ser diferente, e eu rio de vocês por serem todos iguais.', '2010-12-13 15:54:05'),
+(20, 0, 'Seu Madruga', 'seu@madruga.com', 'Posso não ter um centavo no bolso, mas tenho um sorriso no rosto e isso vale mais que todo dinheiro do mundo.', '2010-12-13 16:47:14'),
+(21, 0, 'Albert Einstein', 'albert@einstein.com', 'Eu não sei com que armas a Terceira Guerra Mundial será travada, mas a Quarta será travada com paus e pedras.', '2010-12-13 17:57:20'),
+(22, 0, 'George Washington Carver', 'george@washington.com', 'A distância que você percorre na vida depende do seu carinho com os jovens, da sua delicadeza com os idosos, da sua compreensão com os que se esforçam e da sua tolerância com os fracos e os fortes.', '2010-12-13 17:59:45'),
+(23, 0, 'George Burns', 'george@burns.com', 'Eu preferiria ser um fracasso em algo que amo do que um sucesso em algo que odeio.', '2010-12-13 18:02:10'),
+(24, 0, 'Miguel de Cervantes', 'miguel@cervantes.com', 'A verdade alivia mais do que machuca. E estará sempre acima de qualquer falsidade como o óleo sobre a água.', '2010-12-13 18:04:31'),
+(25, 0, 'Lucretios', 'lucretios@filosofo.com', 'Somos anjos com apenas uma asa, e só podemos voar abraçando uns aos outros.', '2010-12-13 18:06:26'),
+(26, 0, 'Friedrich Nietzsche', 'nietzsche@filosofo.com', 'A vantagem de ter péssima memória é divertir-se muitas vezes com as mesmas coisas boas como se fosse a primeira vez.', '2010-12-14 08:19:26'),
+(27, 0, 'Friedrich Nietzsche', 'nietzsche@filosofo.com', 'Quanto mais nos elevamos, menores parecemos aos olhos daqueles que não sabem voar.', '2010-12-14 08:21:19');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `parametros`
+--
+
+CREATE TABLE IF NOT EXISTS `parametros` (
+  `id` varchar(50) NOT NULL,
+  `alfa1` varchar(50) default NULL,
+  `alfa2` varchar(50) default NULL,
+  `valor1` int(11) default NULL,
+  `valor2` int(11) default NULL,
+  UNIQUE KEY `id` (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `parametros`
+--
+
+INSERT INTO `parametros` (`id`, `alfa1`, `alfa2`, `valor1`, `valor2`) VALUES
+('atualiza', '', '', 25, 0);
